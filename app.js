@@ -1,5 +1,5 @@
 const ADMIN_PASSWORD = "jayful123"; // CHANGE THIS before publishing
-const WHATSAPP_NUMBER = "919999999999"; // CHANGE THIS to your WhatsApp number
+const WHATSAPP_NUMBER = "7057073562"; // CHANGE THIS to your WhatsApp number
 
 const demoProducts = [
   {id:"p1",name:"Pearl Mangalsutra",price:899,stock:10,category:"Pearl",description:"Elegant handmade pearl mangalsutra.",image:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800"},
