@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JAYFUL Handcrafted Creation | Handmade Jewellery</title>
+  <meta name="description" content="JAYFUL Handcrafted Creation — premium handmade jewellery, pearl jewellery, traditional and contemporary designs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">✨ Handmade with love • Premium jewellery • Pan-India orders</div>
+
+  <header class="header">
+    <a class="brand" href="#home">
+      <img src="assets/logo.png" alt="JAYFUL Handcrafted Creation logo">
+    </a>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="cart-btn" id="openCart">Cart <span id="cartCount">0</span></button>
+      <button class="admin-btn" id="openAdmin">Admin</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">JAYFUL HANDCRAFTED CREATION</p>
+        <h1>Jewellery that feels<br><em>uniquely yours.</em></h1>
+        <p class="hero-text">Handcrafted pearl, traditional and contemporary jewellery designed to add a graceful touch to every occasion.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn gold">Shop Collection</a>
+          <a href="#contact" class="btn outline">Custom Orders</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="gold-ring"></div>
+        <div class="hero-logo-wrap"><img src="assets/logo.png" alt=""></div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div><span>01</span><b>Bridal</b><small>Elegant wedding pieces</small></div>
+      <div><span>02</span><b>Pearl</b><small>Handmade pearl designs</small></div>
+      <div><span>03</span><b>Traditional</b><small>Classic Maharashtrian style</small></div>
+      <div><span>04</span><b>Everyday</b><small>Minimal & graceful</small></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Featured Jewellery</h2>
+        </div>
+        <div class="shop-tools">
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+          </select>
+          <input id="searchInput" type="search" placeholder="Search jewellery..." />
+        </div>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section class="story" id="about">
+      <div class="story-image">
+        <img src="assets/logo.png" alt="JAYFUL logo">
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Made by hand.<br>Made to be remembered.</h2>
+        <p>JAYFUL Handcrafted Creation brings together delicate pearls, traditional inspiration and modern styling. Every piece is prepared with attention to detail so your jewellery feels personal, elegant and special.</p>
+        <div class="features">
+          <div><strong>✦</strong><span>Handcrafted<br><small>Carefully made pieces</small></span></div>
+          <div><strong>✦</strong><span>Custom Orders<br><small>Made for your occasion</small></span></div>
+          <div><strong>✦</strong><span>Gift Ready<br><small>Perfect for loved ones</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Have something special in mind?</h2>
+      <p>For custom jewellery, bulk orders or product enquiries, message us directly.</p>
+      <div class="contact-actions">
+        <a class="btn gold" id="whatsappLink" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a class="btn outline" href="mailto:hello@jayfulcreation.com">Email Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.png" alt="JAYFUL" />
+    <p>© <span id="year"></span> JAYFUL Handcrafted Creation. All rights reserved.</p>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-head"><h3>Your Cart</h3><button class="close" id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+      <small>Shipping calculated at checkout.</small>
+      <button class="btn gold full" id="checkoutBtn">Order on WhatsApp</button>
+    </div>
+  </aside>
+
+  <!-- Admin modal -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="admin-modal">
+      <div class="drawer-head"><h3>Product Manager</h3><button class="close" id="closeAdmin">×</button></div>
+      <div id="adminLogin">
+        <p class="muted">Demo admin access. Change the password in <code>app.js</code> before publishing.</p>
+        <input id="adminPassword" type="password" placeholder="Admin password" />
+        <button class="btn gold full" id="loginBtn">Login</button>
+      </div>
+      <div id="adminPanel" class="hidden">
+        <div class="admin-toolbar">
+          <button class="btn gold" id="newProductBtn">+ Add Product</button>
+          <button class="btn outline" id="resetProductsBtn">Reset Demo Products</button>
+        </div>
+        <form id="productForm" class="product-form hidden">
+          <input type="hidden" id="editId">
+          <input id="pName" required placeholder="Product name">
+          <div class="two"><input id="pPrice" required type="number" min="0" placeholder="Price ₹"><input id="pStock" required type="number" min="0" placeholder="Stock"></div>
+          <input id="pCategory" required placeholder="Category e.g. Pearl">
+          <input id="pImage" placeholder="Image URL (optional)">
+          <textarea id="pDescription" rows="3" placeholder="Short description"></textarea>
+          <div class="two"><button class="btn gold" type="submit">Save Product</button><button class="btn outline" type="button" id="cancelEdit">Cancel</button></div>
+        </form>
+        <div id="adminProducts" class="admin-products"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
